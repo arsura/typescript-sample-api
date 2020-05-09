@@ -14,8 +14,8 @@ export async function errorHandler(ctx: Context, next: Function) {
       ctx.body = { message, errors }
     } else {
       console.log(error)
-      const { statusCode, message } = error
-      ctx.status = statusCode
+      const { httpCode, message } = error
+      ctx.status = httpCode
       ctx.body = { message }
     }
   }

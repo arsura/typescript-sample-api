@@ -6,8 +6,8 @@ import {
   useKoaServer,
   useContainer,
 } from 'routing-controllers'
-
 import graphql from './graphql'
+
 import { errorHandler } from './middleware/errorHandler'
 import { autoLoad } from './utils/autoLoad'
 
@@ -15,11 +15,11 @@ useContainer(Container)
 
 export class Server {
   private app: koa = new koa()
-  private port: number = 4000
+  private port: number = 3000
   private hostname: string = '0.0.0.0'
 
   constructor() {
-    this.setupMongo()
+    // this.setupMongo()
     this.useMiddleware()
     this.autoLoadRepositories()
     this.setupGraphQL()

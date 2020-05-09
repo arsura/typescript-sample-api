@@ -4,7 +4,8 @@
   "description": "sample-typescript",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "format": "prettier --write src/**/*.ts"
   },
   "author": "",
   "license": "ISC",
