@@ -10,6 +10,7 @@ export default gql`
   type Todo {
     id: String
     title: String
+    description: String
     status: TodoStatus
   }
 

@@ -10,13 +10,14 @@ import graphql from './graphql'
 
 import { errorHandler } from './middleware/errorHandler'
 import { autoLoad } from './utils/autoLoad'
+import config from './config'
 
 useContainer(Container)
 
 export class Server {
   private app: koa = new koa()
-  private port: number = 3000
-  private hostname: string = '0.0.0.0'
+  private port: number = config.app.port
+  private hostname: string = config.app.hostname
 
   constructor() {
     // this.setupMongo()
