@@ -10,7 +10,20 @@ export default class TodoService {
   private todos: TodoResponse[]
 
   constructor() {
-    this.todos = []
+    this.todos = [
+      {
+        id: '1',
+        title: 'First Item',
+        description: 'Just a des...',
+        status: 'TODO',
+      },
+      {
+        id: '2',
+        title: 'Next Item',
+        description: 'Just a des...',
+        status: 'DOING',
+      },
+    ]
   }
 
   find(query: GetTodoQuery): TodoResponse[] {

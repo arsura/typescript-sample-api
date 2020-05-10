@@ -5,6 +5,7 @@ import {
   IsPositive,
   IsInt,
   Min,
+  IsString,
 } from 'class-validator'
 
 import { TodoStatus } from './todo.model'
@@ -22,6 +23,10 @@ export class TodoRequestDto {
 }
 
 export class GetTodoQuery {
+  @IsOptional()
+  @IsString()
+  id: string
+
   @IsOptional()
   @IsPositive()
   limit: number

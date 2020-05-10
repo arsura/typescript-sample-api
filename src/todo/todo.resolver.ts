@@ -1,10 +1,19 @@
 import TodoService from './todo.service'
+import { GetTodoQuery } from './todo.dto'
+import { TodoResponse } from './todo.model'
 
 export default {
   Query: {
-    todos() {
+    todo(_: any, args: GetTodoQuery): TodoResponse {
+      const { id } = args
       const service = new TodoService()
-      const result = service.find({ skip: 0, limit: 20, title: '3' })
+      const result = service.findById(id)
+      return result
+    },
+    todos(_: any, args: GetTodoQuery): TodoResponse[] {
+      const { skip, limit, title } = args
+      const service = new TodoService()
+      const result = service.find({ skip, limit, title })
       return result
     },
   },

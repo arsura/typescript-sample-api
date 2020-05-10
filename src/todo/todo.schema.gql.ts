@@ -15,6 +15,7 @@ export default gql`
   }
 
   type Query {
-    todos: [Todo]
+    todo(id: String!): Todo,
+    todos(skip: Int, limit: Int, title: String): [Todo]
   }
 `
