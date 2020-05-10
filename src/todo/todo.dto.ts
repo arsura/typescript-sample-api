@@ -24,10 +24,6 @@ export class TodoRequestDto {
 
 export class GetTodoQuery {
   @IsOptional()
-  @IsString()
-  id: string
-
-  @IsOptional()
   @IsPositive()
   limit: number
 

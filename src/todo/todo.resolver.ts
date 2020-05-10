@@ -4,7 +4,7 @@ import { TodoResponse } from './todo.model'
 
 export default {
   Query: {
-    todo(_: any, args: GetTodoQuery): TodoResponse {
+    todo(_: any, args: any): TodoResponse {
       const { id } = args
       const service = new TodoService()
       const result = service.findById(id)
