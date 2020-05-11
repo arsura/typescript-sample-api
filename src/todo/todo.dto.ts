@@ -22,7 +22,7 @@ export class TodoRequestDto {
   status: TodoStatus
 }
 
-export class GetTodoQuery {
+export class TodosQueryDto {
   @IsOptional()
   @IsPositive()
   limit: number
@@ -34,4 +34,9 @@ export class GetTodoQuery {
 
   @IsOptional()
   title: string
+}
+
+export class TodoQueryDto {
+  @IsOptional()
+  id: string
 }

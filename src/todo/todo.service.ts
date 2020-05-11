@@ -1,9 +1,9 @@
-import { Service, Inject } from 'typedi'
+import { Service } from 'typedi'
 import { NotFoundError } from 'routing-controllers'
 import { v1 as uuidv1 } from 'uuid'
 
 import { TodoResponse } from './todo.model'
-import { TodoRequestDto, GetTodoQuery } from './todo.dto'
+import { TodoRequestDto, TodosQueryDto } from './todo.dto'
 
 @Service()
 export default class TodoService {
@@ -26,7 +26,7 @@ export default class TodoService {
     ]
   }
 
-  find(query: GetTodoQuery): TodoResponse[] {
+  find(query: TodosQueryDto): TodoResponse[] {
     const { skip, limit, title } = query
     const regex = new RegExp(title, 'g')
     let todos = this.todos.filter((todo) => todo.title.match(regex))

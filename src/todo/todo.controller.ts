@@ -12,14 +12,14 @@ import {
 
 import TodoService from './todo.service'
 import { TodoResponse } from './todo.model'
-import { TodoRequestDto, GetTodoQuery } from './todo.dto'
+import { TodoRequestDto, TodosQueryDto } from './todo.dto'
 
 @Controller('/todos')
 export default class TodoController {
   constructor(private service: TodoService) {}
 
   @Get()
-  get(@QueryParams() query: GetTodoQuery): TodoResponse[] {
+  get(@QueryParams() query: TodosQueryDto): TodoResponse[] {
     return this.service.find(query)
   }
 

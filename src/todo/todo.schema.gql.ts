@@ -15,7 +15,11 @@ export default gql`
   }
 
   type Query {
-    todo(id: String!): Todo,
+    todo(id: String!): Todo
     todos(skip: Int, limit: Int, title: String): [Todo]
+  }
+
+  type Mutation {
+    createTodo(title: String!, description: String, status: TodoStatus): Todo
   }
 `
